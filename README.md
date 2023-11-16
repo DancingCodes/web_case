@@ -12,5 +12,7 @@ Normalize
 Scss
 
 Pinia
+
+Echarts
 ```
 
