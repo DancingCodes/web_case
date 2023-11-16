@@ -13,6 +13,7 @@ import '@/assets/styles/scrollbar.scss'
 // vue Router
 import router from '@/router/index.ts'
 
+
 // Pinia
 import { createPinia } from 'pinia'
 const pinia = createPinia()
