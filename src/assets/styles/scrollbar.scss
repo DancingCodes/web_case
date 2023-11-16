@@ -1,0 +1,21 @@
+/* 滚动条宽高 */
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+/* 滚动条样式 */
+:hover ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+}
+
+/* 滚动条底色 */
+::-webkit-scrollbar-track-piece {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* 鼠标悬浮到滚动条时 */
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
