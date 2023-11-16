@@ -1,6 +1,6 @@
 <template>
     <el-breadcrumb separator="/">
-        <el-breadcrumb-item v-for="(item, index) in menuHomepageList" :key="index" :to="item.path">
+        <el-breadcrumb-item v-for="(item, index) in menuHomepageList" :key="index">
             {{ item.meta.asideName }}
         </el-breadcrumb-item>
     </el-breadcrumb>

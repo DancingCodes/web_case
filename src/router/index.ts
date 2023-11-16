@@ -7,7 +7,7 @@ import { createRouter, createWebHistory } from "vue-router";
  *     asideShow: 是否在菜单中显示
  *     asideName: 在菜单中显示的名称
  *     menuType: 菜单嵌套时在菜单中展示的方式(menu(菜单) > group(组))
- *               menu: 需要将component设置为Main组件
+ *               menu: 需要将component设置为Main组件(component: () => import('../components/Main/index.vue'))
  *               group: 只负责展示标题，不需要component
  * }
  * 
@@ -42,6 +42,25 @@ const routes = [
             asideShow: true,
             asideName: 'copyImgUpload'
         }
+    },
+    {
+        path: '/style',
+        component: () => import('../components/Main/index.vue'),
+        meta: {
+            asideShow: true,
+            asideName: 'style',
+            menuType: 'menu'
+        },
+        children: [
+            {
+                path: 'switch',
+                component: () => import('@/views/switch/index.vue'),
+                meta: {
+                    asideShow: true,
+                    asideName: 'switch'
+                }
+            }
+        ],
     },
     {
         path: '/404',
