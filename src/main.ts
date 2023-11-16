@@ -10,6 +10,7 @@ import 'element-plus/theme-chalk/dark/css-vars.css'
 // 滚动条美化
 import '@/assets/styles/scrollbar.scss'
 
+
 // vue Router
 import router from '@/router/index.ts'
 
