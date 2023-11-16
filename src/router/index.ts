@@ -35,34 +35,15 @@ const routes = [
             asideShow: true,
             asideName: 'eCharts'
         }
-    },
-    {
-        path: '/fu',
-        component: () => import('@/components/Main/index.vue'),
+    }, {
+        path: '/copyImgUpload',
+        component: () => import('@/views/copyImgUpload/index.vue'),
         meta: {
             asideShow: true,
-            asideName: 'fu',
-            menuType: 'menu'
-        },
-        children: [{
-            path: 'fu2',
-            component: () => import('@/components/Main/index.vue'),
-            meta: {
-                asideShow: true,
-                asideName: 'fu2',
-                menuType: 'menu'
-
-            },
-            children: [{
-                path: 'zi',
-                component: () => import('@/views/zi/index.vue'),
-                meta: {
-                    asideShow: true,
-                    asideName: 'zi',
-                },
-            }]
-        }],
-    }, {
+            asideName: 'copyImgUpload'
+        }
+    },
+    {
         path: '/404',
         component: () => import('@/views/404/index.vue'),
         meta: {
