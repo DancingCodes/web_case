@@ -1,7 +1,9 @@
 <template>
   <div class="viewBox" :class="[switchState ? 'rightStyle' : 'leftStyle']">
     <div class="switch" @click="changeSwitchState">
-      <div class="switchBotton" :class="[switchState ? 'right' : 'left']"></div>
+      <div class="switchBotton" :class="[switchState ? 'right' : 'left']">
+        <div class="round" :class="[switchState ? 'openRound' : 'closeRound']"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -16,9 +18,13 @@ const changeSwitchState = (): void => {
 
 <style scoped lang="scss">
 // 开关宽度
-$switchWidth: 100px;
-// 开关按钮宽度
-$switchButtonWidth: 40px;
+$switchWidth: 200px;
+// 开关高度
+$switchHeight: calc($switchWidth / 2);
+// 关闭时颜色
+$closeColor: white;
+// 开启时颜色
+$openColor: black;
 
 .viewBox {
   height: 100%;
@@ -29,36 +35,53 @@ $switchButtonWidth: 40px;
 }
 
 .leftStyle {
-  background-color: white;
+  background-color: $closeColor;
 }
 
 .rightStyle {
-  background-color: black;
+  background-color: $openColor;
 }
 
 
 .switch {
   width: $switchWidth;
-  height: 40px;
+  height: $switchHeight;
   border: 1px solid var(--el-border-color);
-  border-radius: 40px;
+  border-radius: $switchHeight;
   margin: 0 auto;
 
   .switchBotton {
-    width: $switchButtonWidth;
+    width: $switchHeight;
     height: 100%;
     border-radius: 50%;
-    transition: all 1s;
+    transition: transform 1s;
+    overflow: hidden;
+
+    .round {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: $openColor;
+      transition: transform 1s;
+    }
+
+    .closeRound {
+      transform: translate(-100%, -100%);
+    }
+
+    .openRound {
+      transform: translate(-36%, -36%);
+    }
   }
 
   .left {
-    background-color: black;
+    background-color: $openColor;
     transform: translateX(0);
   }
 
   .right {
-    background-color: white;
-    transform: translateX(calc($switchWidth - $switchButtonWidth));
+    background-color: $closeColor;
+    transform: translateX(calc($switchWidth - $switchHeight));
   }
 
 }
