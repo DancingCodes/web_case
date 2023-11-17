@@ -46,31 +46,33 @@ $openColor: black;
 .switch {
   width: $switchWidth;
   height: $switchHeight;
-  border: 1px solid var(--el-border-color);
+  border: 2px solid var(--el-border-color);
   border-radius: $switchHeight;
   margin: 0 auto;
+  overflow: hidden;
 
   .switchBotton {
     width: $switchHeight;
     height: 100%;
     border-radius: 50%;
-    transition: transform 1s;
-    overflow: hidden;
+    transition: all 1s;
 
     .round {
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      background-color: $openColor;
-      transition: transform 1s;
+      transition: all 1s;
     }
 
     .closeRound {
       transform: translate(-100%, -100%);
+      background-color: $closeColor;
     }
 
     .openRound {
       transform: translate(-36%, -36%);
+
+      background-color: $openColor;
     }
   }
 
